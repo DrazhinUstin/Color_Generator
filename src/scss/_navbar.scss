@@ -1,0 +1,24 @@
+nav {
+    background-color: $primary-clr;
+}
+
+.navbar {
+    height: 5rem;
+    @extend %flex-between;
+    color: $white;
+    h1 {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    a {
+        color: $white;
+        transition: $ease-trans;
+        &:hover {
+            color: $light-green;
+        }
+    }
+    .icon {
+        display: block;
+        font-size: 2rem;
+    }
+}

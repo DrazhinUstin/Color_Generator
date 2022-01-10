@@ -1,0 +1,45 @@
+.search-form {
+    @extend %flex-center;
+    margin: 4rem 0;
+    input,
+    select {
+        height: 2rem;
+        border: 1px solid $grey;
+        border-radius: $radius;
+        &:focus {
+            outline: none;
+            padding: 0 calc(0.5rem - 1px);
+            border: 2px solid $primary-clr;
+        }
+    }
+    input {
+        width: 20rem;
+        padding: 0 0.5rem;
+        &::placeholder {
+            color: darken($grey, 25%);
+        }
+        &.error {
+            padding: 0 calc(0.5rem - 1px);
+            border: 2px solid $red;
+        }
+    }
+    select {
+        padding: 0 0.25rem;
+        &:focus {
+            padding: 0 calc(0.25rem - 1px);
+        }
+    }
+    button {
+        height: 2rem;
+        padding: 0 0.5rem;
+        border: none;
+        border-radius: $radius;
+        background-color: $primary-clr;
+        color: $white;
+        text-transform: uppercase;
+        transition: $ease-trans;
+        &:active {
+            transform: scale(0.9);
+        }
+    }
+}
