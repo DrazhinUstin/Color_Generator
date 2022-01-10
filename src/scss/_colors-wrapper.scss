@@ -4,15 +4,39 @@
     grid-gap: 1rem;
     margin: 4rem 0;
     article {
+        position: relative;
         height: 200px;
         padding: 1rem;
         box-shadow: $shadow;
+        cursor: pointer;
         transition: $ease-trans;
+        &:hover {
+            transform: translateY(-0.25rem);
+        }
         p {
             margin-bottom: 0.5rem;
         }
-        &:hover {
-            transform: translateY(-0.25rem);
+        .copy {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0) rotate(0);
+            visibility: hidden;
+            margin-bottom: unset;
+            text-transform: capitalize;
+            letter-spacing: $spacing;
+            transition: $ease-trans;
+            z-index: 99;
+            &.show {
+                transform: translate(-50%, -50%) scale(1) rotate(360deg);
+                visibility: visible;
+            }
+        }
+    }
+    @include for-size(small) {
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+        article {
+            height: 10rem;
         }
     }
 }

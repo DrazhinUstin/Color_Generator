@@ -9,6 +9,9 @@ nav {
     h1 {
         font-size: 2rem;
         font-weight: 500;
+        @include for-size(small) {
+            font-size: 1.6rem;
+        }
     }
     a {
         color: $white;
@@ -20,5 +23,8 @@ nav {
     .icon {
         display: block;
         font-size: 2rem;
+        @include for-size(small) {
+            font-size: 1.8rem;
+        }
     }
 }
