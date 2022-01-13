@@ -1,8 +1,8 @@
 import { React, useState, useRef } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import Values from 'values.js';
-import SingleColor from './SingleColor';
-import ScrollBtn from './ScrollBtn';
+import SingleColor from './components/SingleColor';
+import ScrollBtn from './components/ScrollBtn';
 
 const App = () => {
     const [error, setError] = useState(false);
