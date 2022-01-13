@@ -27,7 +27,7 @@ $ease-trans: all 0.4s ease;
 
 @mixin for-size($size) {
     @if ($size == small) {
-        @media screen and (max-width: 425px) {
+        @media screen and (max-width: 475px) {
             @content;
         }
     }

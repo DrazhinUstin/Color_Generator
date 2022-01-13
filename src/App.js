@@ -1,13 +1,15 @@
-import { React, useState } from 'react';
+import { React, useState, useRef } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import Values from 'values.js';
 import SingleColor from './SingleColor';
+import ScrollBtn from './ScrollBtn';
 
 const App = () => {
     const [error, setError] = useState(false);
     const [color, setColor] = useState('');
     const [weight, setWeight] = useState(10);
     const [colors, setColors] = useState(new Values('#ed213a').all(10));
+    const inputDOM = useRef(null);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -18,6 +20,7 @@ const App = () => {
         } catch (error) {
             console.log(error);
             setError(true);
+            inputDOM.current.focus();
         }
     };
 
@@ -43,6 +46,7 @@ const App = () => {
                         className={error ? 'error' : ''}
                         value={color}
                         onChange={(e) => setColor(e.target.value)}
+                        ref={inputDOM}
                     />
                     <select value={weight} onChange={(e) => setWeight(+e.target.value)}>
                         {[0, 1, 2, 4, 5, 10, 20, 25, 50, 100].map((item, index) => {
@@ -61,6 +65,7 @@ const App = () => {
                     })}
                 </div>
             </div>
+            <ScrollBtn />
         </>
     );
 };
